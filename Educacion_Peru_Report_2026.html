@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educación en Perú · 8 de junio al 7 de julio 2026</title>
+    <style>
+        /* ──────────────────────────────────────────────────────────────────────────
+           ARTOOL DESIGN SYSTEM · Reportes de escucha social
+           Monocromo + un solo acento (naranja Artool #FF5A1F)
+           ────────────────────────────────────────────────────────────────────────── */
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* ── Core monocromo ─────────────────────────────────────────── */
+            --ink:          #0A0A0A;
+            --ink-pure:     #000000;
+            --paper:        #FFFFFF;
+            --paper-warm:   #FAFAF7;
+
+            /* ── Escala neutral ─────────────────────────────────────────── */
+            --n-50:  #F5F5F4;
+            --n-100: #EAEAE8;
+            --n-200: #D4D4D1;
+            --n-300: #B8B8B4;
+            --n-400: #8B8B87;
+            --n-500: #5C5C59;
+            --n-600: #3A3A38;
+            --n-700: #262625;
+            --n-800: #161615;
+            --n-900: #0A0A0A;
+
+            /* ── Accent único Artool ────────────────────────────────────── */
+            --accent:       #FF5A1F;
+            --accent-hover: #E94D14;
+            --accent-soft:  #FFE8DC;
+
+            /* ── Type families ──────────────────────────────────────────── */
+            --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: var(--font-body);
+            background: var(--n-50);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        deck-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 32px 0;
+        }
+
+        deck-stage section {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--font-body);
+            overflow: hidden;
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            box-shadow: 0 4px 12px rgba(10,10,10,.06), 0 1px 3px rgba(10,10,10,.04);
+        }
+
+        @media (max-width: 1960px) {
+            deck-stage { padding: 16px 0; }
+            deck-stage section {
+                transform: scale(calc((100vw - 32px) / 1920px));
+                transform-origin: top center;
+                margin-bottom: calc(1080px * ((100vw - 32px) / 1920px - 1));
+            }
+        }
+
+        @media print {
+            @page { size: 1920px 1080px; margin: 0; }
+            deck-stage { display: block; padding: 0; }
+            deck-stage section { transform: none; margin: 0; box-shadow: none; }
+            deck-stage section + section { break-before: page; }
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .cover {
+            background: var(--ink);
+            color: var(--paper);
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: 64px 96px;
+        }
+
+        .cover .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cover .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .cover .logo-row .sep {
+            width: 1px;
+            height: 56px;
+            background: rgba(255,255,255,.25);
+        }
+
+        .cover .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cover h1.cover-title {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 168px;
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            margin: 0;
+            max-width: 1400px;
+        }
+
+        .cover .cover-sub {
+            font-size: 30px;
+            line-height: 1.35;
+            color: rgba(255,255,255,.75);
+            max-width: 1100px;
+            margin-top: 36px;
+        }
+
+        .cover .cover-eyebrow {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.55);
+            margin-bottom: 32px;
+        }
+
+        .cover .meta {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.6);
+        }
+
+        .cover .meta .sep {
+            color: rgba(255,255,255,.3);
+        }
+
+        .slide.dark {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .divider {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 96px 96px 96px;
+            height: 100%;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .divider .ch-num {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 380px;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            color: var(--paper);
+        }
+
+        .divider .ch-title {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 92px;
+            line-height: 0.96;
+            letter-spacing: -0.03em;
+            max-width: 1400px;
+        }
+
+        .divider .ch-eyebrow {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.55);
+            margin-bottom: 24px;
+        }
+
+        .divider .ch-desc {
+            font-size: 24px;
+            line-height: 1.45;
+            color: rgba(255,255,255,.75);
+            max-width: 880px;
+            margin-top: 24px;
+        }
+
+        .divider .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 96px;
+            border-bottom: 1px solid var(--n-100);
+        }
+
+        .slide-header .eyebrow {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--n-500);
+        }
+
+        .slide-header .crumb {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .slide-header .crumb b {
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .slide-header .dot {
+            color: var(--n-300);
+        }
+
+        .slide.dark .slide-header {
+            border-bottom-color: rgba(255,255,255,.08);
+        }
+
+        .slide.dark .slide-header .eyebrow,
+        .slide.dark .slide-header .crumb,
+        .slide.dark .slide-header .dot {
+            color: rgba(255,255,255,.55);
+        }
+
+        .slide.dark .slide-header .crumb b {
+            color: var(--paper);
+        }
+
+        .frame {
+            padding: 64px 96px 150px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 96px;
+            font-size: 14px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--n-400);
+            font-weight: 600;
+            border-top: 1px solid var(--n-100);
+        }
+
+        .slide-footer .right {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .slide.dark .slide-footer {
+            border-top-color: rgba(255,255,255,.08);
+            color: rgba(255,255,255,.45);
+        }
+
+        .t-eyebrow {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--n-500);
+            margin: 0;
+        }
+
+        .t-title {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 72px;
+            line-height: 1.02;
+            letter-spacing: -0.025em;
+            margin: 0;
+            text-wrap: balance;
+        }
+
+        .t-h3 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        .t-body {
+            font-size: 28px;
+            line-height: 1.45;
+            margin: 0;
+            color: var(--ink);
+            text-wrap: pretty;
+        }
+
+        .dark .t-eyebrow {
+            color: rgba(255,255,255,.55);
+        }
+
+        .dark .t-body {
+            color: var(--paper);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 24px;
+            border-top: 1px solid var(--n-200);
+        }
+
+        .stat .label {
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--n-500);
+        }
+
+        .stat .value {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 64px;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+        }
+
+        .stat .value.accent-color {
+            color: var(--accent);
+        }
+
+        .stat .sub {
+            font-size: 18px;
+            color: var(--n-500);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .dark .stat {
+            border-top-color: rgba(255,255,255,.18);
+        }
+
+        .dark .stat .label {
+            color: rgba(255,255,255,.6);
+        }
+
+        .dark .stat .value {
+            color: var(--paper);
+        }
+
+        .dark .stat .sub {
+            color: rgba(255,255,255,.6);
+        }
+
+        .numlist {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        .numlist .item {
+            display: grid;
+            grid-template-columns: 96px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .numlist .num {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 56px;
+            line-height: 0.9;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            border-top: 3px solid var(--ink);
+            padding-top: 12px;
+        }
+
+        .numlist .num--accent {
+            color: var(--accent);
+            border-top-color: var(--accent);
+        }
+
+        .numlist h4 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            margin: 0 0 8px;
+        }
+
+        .numlist p {
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--n-600);
+            margin: 0;
+        }
+
+        .dark .numlist .num {
+            color: var(--paper);
+            border-top-color: var(--paper);
+        }
+
+        .dark .numlist h4 {
+            color: var(--paper);
+        }
+
+        .dark .numlist p {
+            color: rgba(255,255,255,.7);
+        }
+
+        .bignum {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 168px;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            color: var(--ink);
+        }
+
+        .dark .bignum {
+            color: var(--paper);
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .bar-label {
+            width: 200px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .bar-bg {
+            flex: 1;
+            height: 32px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .bar-pct {
+            width: 80px;
+            text-align: right;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--n-600);
+        }
+
+        .theme-card {
+            background: var(--n-50);
+            padding: 32px;
+            border: 1px solid var(--n-200);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .theme-card .number {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 44px;
+            color: var(--accent);
+        }
+
+        .theme-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .theme-card p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--n-600);
+        }
+
+        .hr {
+            height: 1px;
+            background: var(--n-100);
+            border: 0;
+            margin: 0;
+        }
+
+        .dark .hr {
+            background: rgba(255,255,255,.12);
+        }
+
+        .accent-color {
+            color: var(--accent);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                break-after: page;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<deck-stage>
+
+<!-- ===== SLIDE 01: PORTADA ===== -->
+<section data-label="01 Portada">
+  <div class="slide dark">
+    <div class="cover">
+      <div class="top">
+        <div class="logo-row">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:38px;color:var(--paper);letter-spacing:-0.02em;">Educación<br>en Perú</span>
+          <div class="sep"></div>
+          <span style="font-family:var(--font-body);font-weight:600;font-size:16px;color:rgba(255,255,255,.45);letter-spacing:0.16em;text-transform:uppercase;">Reporte ejecutivo · Confidencial</span>
+        </div>
+        <span style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.35);">artool.</span>
+      </div>
+
+      <div class="center">
+        <p class="cover-eyebrow">Educación en Perú · Escucha digital · Junio–Julio 2026</p>
+        <h1 class="cover-title">Educación superior y jóvenes<br>profesionales dominan la<br>conversación digital en Perú.</h1>
+        <p class="cover-sub">Reporte de escucha social enfocado en educación para profesionales de 18 a 24 años. Análisis de 220,537 menciones entre el 8 de junio y 7 de julio de 2026. Narrativas, sentimiento y distribución temática en torno a educación superior, becas, carreras profesionales y salida laboral.</p>
+      </div>
+
+      <div class="meta">
+        <span>8 jun – 7 jul 2026</span>
+        <span class="sep">·</span>
+        <span>220.5K menciones</span>
+        <span class="sep">·</span>
+        <span>30 días monitoreados</span>
+        <span class="sep">·</span>
+        <span>Preparado por artool.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 02: DIVIDER RESUMEN ===== -->
+<section data-label="02 Resumen ejecutivo — Divider">
+  <div class="slide dark">
+    <div class="divider">
+      <div class="top-row">
+        <span class="ch-eyebrow">02 · Resumen ejecutivo</span>
+        <span style="font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.35);">Educación en Perú · Escucha digital 2026</span>
+      </div>
+      <div>
+        <div class="ch-num">02</div>
+        <div class="ch-title">Cinco<br>lecturas del<br>período.</div>
+        <p class="ch-desc">Una conversación concentrada en educación superior y profesionalización de jóvenes, con fuerte presencia en redes sociales y engagement desproporcional en plataformas visuales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 02.1: LECTURAS CLAVE ===== -->
+<section data-label="02.1 Resumen ejecutivo — Lecturas clave">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">02 · Resumen ejecutivo</div>
+      <div class="crumb">
+        <span>2.1</span><span class="dot">·</span><b>Cinco lecturas del período</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Educación en Perú</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px 80px;">
+
+        <!-- Ítem A -->
+        <div class="numlist" style="gap:0;">
+          <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+            <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">A</div>
+            <div>
+              <h4 style="font-size:26px;margin-bottom:6px;">Estudiantes y universidad concentran 36.7% del volumen</h4>
+              <p style="font-size:20px;line-height:1.45;color:var(--n-600);">De 220,537 menciones, 43.6K corresponden a estudiantes y 37.2K a universidad. Juntas representan más de 1/3 de toda la conversación observada en el período.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ítem B -->
+        <div class="numlist" style="gap:0;">
+          <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+            <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">B</div>
+            <div>
+              <h4 style="font-size:26px;margin-bottom:6px;">Twitter domina como plataforma (73%)</h4>
+              <p style="font-size:20px;line-height:1.45;color:var(--n-600);">De las 220,537 menciones, 161,237 provienen de Twitter, consolidándola como el principal canal de conversación sobre educación superior en Perú.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ítem C -->
+        <div class="numlist" style="gap:0;">
+          <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+            <div class="num" style="font-size:44px;padding-top:10px;border-top-width:3px;">C</div>
+            <div>
+              <h4 style="font-size:26px;margin-bottom:6px;">HHI de 2,134 indica concentración moderada-alta</h4>
+              <p style="font-size:20px;line-height:1.45;color:var(--n-600);">La actividad está concentrada en pocos temas principales. La mayoría de la conversación giró en torno a 3-5 temáticas clave relacionadas con educación profesional.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ítem D -->
+        <div class="numlist" style="gap:0;">
+          <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+            <div class="num" style="font-size:44px;padding-top:10px;border-top-width:3px;">D</div>
+            <div>
+              <h4 style="font-size:26px;margin-bottom:6px;">Becas y financiamiento: 18% de la conversación</h4>
+              <p style="font-size:20px;line-height:1.45;color:var(--n-600);">19.9K menciones sobre becas/ayuda + 8.8K sobre financiamiento. Acceso y costo de educación superior es tema central para jóvenes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ítem E -->
+        <div class="numlist" style="gap:0;grid-column:1/-1;">
+          <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+            <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">E</div>
+            <div>
+              <h4 style="font-size:26px;margin-bottom:6px;">Engagement desproporcional en plataformas visuales</h4>
+              <p style="font-size:20px;line-height:1.45;color:var(--n-600);">Aunque Twitter domina en volumen, Facebook (270x engagement), Instagram (324x) y YouTube (119x) generan interacción masiva. La educación es tema visual y emocional.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span>02 · Resumen ejecutivo</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 02.2: CIFRA TESIS ===== -->
+<section data-label="02.2 Resumen ejecutivo — Cifra tesis">
+  <div class="slide dark">
+    <header class="slide-header" style="border-bottom-color:rgba(255,255,255,.08);">
+      <div class="eyebrow" style="color:rgba(255,255,255,.55);">02 · Resumen ejecutivo</div>
+      <div class="crumb" style="color:rgba(255,255,255,.55);">
+        <span>2.2</span><span class="dot" style="color:rgba(255,255,255,.3);">·</span><b style="color:var(--paper);">El dato que define el período</b>
+      </div>
+    </header>
+
+    <div class="frame" style="display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding-top:56px;padding-bottom:160px;">
+
+      <!-- Cifra principal -->
+      <div style="display:flex;flex-direction:column;gap:24px;max-width:820px;">
+        <p class="t-eyebrow" style="color:rgba(255,255,255,.55);">Segmento 18–24 años · Menciones relevantes</p>
+        <div style="display:flex;align-items:baseline;gap:16px;">
+          <span class="bignum" style="font-size:200px;color:var(--paper);">156.4K</span>
+        </div>
+        <p style="font-family:var(--font-display);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-0.02em;color:var(--paper);max-width:780px;">de 220,537 menciones son relevantes<br>para educación de jóvenes 18–24.</p>
+        <p class="t-body" style="color:rgba(255,255,255,.7);font-size:24px;max-width:700px;margin-top:8px;">El 70.9% del corpus aborda temas directamente relevantes para futuros profesionales: universidad, becas, política educativa, escuela y oportunidades laborales.</p>
+      </div>
+
+      <!-- Barras comparativas -->
+      <div style="display:flex;flex-direction:column;gap:20px;width:460px;">
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,.55);">Relevantes 18–24</span>
+            <span style="font-family:var(--font-display);font-weight:900;font-size:32px;color:var(--paper);letter-spacing:-0.02em;">156.4K</span>
+          </div>
+          <div style="height:28px;background:rgba(255,255,255,.12);position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;bottom:0;left:0;width:70.9%;background:var(--paper);"></div>
+          </div>
+          <span style="font-size:15px;color:rgba(255,255,255,.4);letter-spacing:0.06em;">70,9 % del corpus</span>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,.1);margin:8px 0;"></div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,.55);">Otros temas</span>
+            <span style="font-family:var(--font-display);font-weight:900;font-size:32px;color:rgba(255,255,255,.6);letter-spacing:-0.02em;">64.1K</span>
+          </div>
+          <div style="height:28px;background:rgba(255,255,255,.12);position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;bottom:0;left:0;width:29.1%;background:rgba(255,255,255,.45);"></div>
+          </div>
+          <span style="font-size:15px;color:rgba(255,255,255,.4);letter-spacing:0.06em;">29,1 % del corpus</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="slide-footer" style="border-top-color:rgba(255,255,255,.08);color:rgba(255,255,255,.45);">
+      <span>02 · Resumen ejecutivo</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 03: DIVIDER TEMAS ===== -->
+<section data-label="03 Temas y Narrativas — Divider">
+  <div class="slide dark">
+    <div class="divider">
+      <div class="top-row">
+        <span class="ch-eyebrow">03 · Temas y narrativas (jóvenes 18–24)</span>
+        <span style="font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.35);">Educación en Perú · Escucha digital 2026</span>
+      </div>
+      <div>
+        <div class="ch-num">03</div>
+        <div class="ch-title">Temas<br>centrales del<br>segmento.</div>
+        <p class="ch-desc">156,379 menciones focalizadas en educación superior, acceso a becas, carreras profesionales y transición a mercado laboral. Concentración de conversación moderada-alta alrededor de estos ejes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 03.1: TEMAS PRINCIPALES ===== -->
+<section data-label="03.1 Temas y Narrativas — Distribución temática">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">03 · Temas y narrativas (18–24)</div>
+      <div class="crumb">
+        <span>3.1</span><span class="dot">·</span><b>Distribución temática relevante para jóvenes</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Segmento 18–24 años · 156.4K menciones relevantes</p>
+      <p class="t-h3" style="margin-bottom:48px;">Seis temas dominan la conversación sobre educación superior y oportunidades laborales.</p>
+
+      <!-- Barras -->
+      <div style="flex:1;">
+        <div class="bar-item">
+          <div class="bar-label">Estudiantes & Vida Universitaria</div>
+          <div class="bar-bg" style="width:85%;">43.6K</div>
+          <div class="bar-pct">27.9%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Universidad & Educación Superior</div>
+          <div class="bar-bg" style="width:73%;">37.2K</div>
+          <div class="bar-pct">23.8%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Becas, Financiamiento & Ayuda</div>
+          <div class="bar-bg" style="width:57%;">28.7K</div>
+          <div class="bar-pct">18.4%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Política Educativa & Reforma</div>
+          <div class="bar-bg" style="width:48%;">20.8K</div>
+          <div class="bar-pct">13.3%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Tecnología & Educación Digital</div>
+          <div class="bar-bg" style="width:32%;">6.8K</div>
+          <div class="bar-pct">4.3%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Calidad & Acreditación</div>
+          <div class="bar-bg" style="width:19%;">6.0K</div>
+          <div class="bar-pct">3.8%</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span>03 · Temas y narrativas</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 04: DIVIDER SENTIMIENTO ===== -->
+<section data-label="04 Sentimiento y Narrativas — Divider">
+  <div class="slide dark">
+    <div class="divider">
+      <div class="top-row">
+        <span class="ch-eyebrow">04 · Sentimiento y narrativas</span>
+        <span style="font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.35);">Educación en Perú · Escucha digital 2026</span>
+      </div>
+      <div>
+        <div class="ch-num">04</div>
+        <div class="ch-title">Sentimiento<br>predominante<br>optimista.</div>
+        <p class="ch-desc">Jóvenes en Perú mantienen conversación positiva sobre educación superior y oportunidades. Crítica enfocada en acceso y costo, no en calidad percibida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 04.1: SENTIMIENTO ===== -->
+<section data-label="04.1 Sentimiento — Análisis">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">04 · Sentimiento y narrativas</div>
+      <div class="crumb">
+        <span>4.1</span><span class="dot">·</span><b>Tone of voice en conversación sobre educación superior</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Análisis de tono y sentimiento</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 64px;margin-bottom:64px;">
+
+        <div class="stat">
+          <span class="label">Sentimiento Positivo</span>
+          <span class="value accent-color tabular">58%</span>
+          <span class="sub">Aspiración, orgullo académico, logros y oportunidades</span>
+        </div>
+
+        <div class="stat">
+          <span class="label">Sentimiento Neutral</span>
+          <span class="value tabular">24%</span>
+          <span class="sub">Información, noticias, datos sobre educación</span>
+        </div>
+
+        <div class="stat">
+          <span class="label">Sentimiento Negativo</span>
+          <span class="value tabular">18%</span>
+          <span class="sub">Frustración con costo, crítica a política educativa</span>
+        </div>
+
+      </div>
+
+      <hr class="hr">
+
+      <div style="margin-top:48px;">
+        <p class="t-eyebrow" style="margin-bottom:24px;">Narrativas principales detectadas</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+
+          <div class="theme-card">
+            <div class="number">1</div>
+            <h3>Aspiración & Movilidad</h3>
+            <p>Educación superior como camino para profesionalización y movilidad social. Jóvenes comparten historias de acceso a universidades de calidad.</p>
+          </div>
+
+          <div class="theme-card">
+            <div class="number">2</div>
+            <h3>Costo de Acceso</h3>
+            <p>Preocupación por financiamiento y becas. Becas de gobierno y privadas son tema central. Crítica no a la educación, sino al acceso.</p>
+          </div>
+
+          <div class="theme-card">
+            <div class="number">3</div>
+            <h3>Empleabilidad</h3>
+            <p>Conversación sobre carreras con demanda laboral, habilidades del futuro. Educación evaluada por capacidad de generar empleo.</p>
+          </div>
+
+          <div class="theme-card">
+            <div class="number">4</div>
+            <h3>Transformación Digital</h3>
+            <p>Interés en educación online, hybrid y competencias digitales. COVID normalizó expectativa de educación flexible.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="slide-footer">
+      <span>04 · Sentimiento y narrativas</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 05: HALLAZGOS ===== -->
+<section data-label="05 Hallazgos — Divider">
+  <div class="slide dark">
+    <div class="divider">
+      <div class="top-row">
+        <span class="ch-eyebrow">05 · Hallazgos y recomendaciones</span>
+        <span style="font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.35);">Educación en Perú · Escucha digital 2026</span>
+      </div>
+      <div>
+        <div class="ch-num">05</div>
+        <div class="ch-title">Tres<br>hallazgos<br>clave.</div>
+        <p class="ch-desc">Oportunidades para incidir en conversación, generar engagement y posicionarse como actor de cambio educativo en Perú.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 05.1: HALLAZGOS DETALLE ===== -->
+<section data-label="05.1 Hallazgos — Detalle">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">05 · Hallazgos y recomendaciones</div>
+      <div class="crumb">
+        <span>5.1</span><span class="dot">·</span><b>Tres hallazgos clave y oportunidades</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Educación en Perú para jóvenes 18–24</p>
+
+      <div class="numlist" style="gap:36px;">
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">1</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Conversación enfocada y de alto valor estratégico</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">156.4K menciones relevantes indican que 71% de la conversación sobre educación en Perú toca temas de educación superior. No hay ruido: jóvenes hablan de carreras, universidades, becas, futuro laboral. Oportunidad para marcas educativas y gobierno de llegar a audiencia altamente enfocada.</p>
+          </div>
+        </div>
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">2</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Sentimiento positivo con crítica específica a acceso</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">58% sentimiento positivo vs 18% negativo. Jóvenes creen en educación como herramienta de cambio, pero demandan soluciones en financiamiento y becas. La crítica no es a universidades o calidad percibida, sino a equidad de acceso. Ventana para políticas e iniciativas de inclusión financiera.</p>
+          </div>
+        </div>
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">3</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Engagement masivo en plataformas visuales, no solo volumen</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">Facebook genera 270x engagement por mención, Instagram 324x, YouTube 119x. Jóvenes responden emotivamente a contenido visual sobre educación: historias de graduados, vida en campus, testimonios de estudiantes. Priorizar video, fotos y narrativas visuales por encima de threads de texto.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span>05 · Hallazgos y recomendaciones</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 06: DIVIDER RADIO FM ===== -->
+<section data-label="06 Educación en Radio FM — Divider">
+  <div class="slide dark">
+    <div class="divider">
+      <div class="top-row">
+        <span class="ch-eyebrow">06 · Educación en Radio FM</span>
+        <span style="font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.35);">Educación en Perú · Escucha digital 2026</span>
+      </div>
+      <div>
+        <div class="ch-num">06</div>
+        <div class="ch-title">Radio FM:<br>Canal de<br>política<br>educativa.</div>
+        <p class="ch-desc">1,398 menciones en radio/broadcast revela que emisoras como Uno, América y Poder concentran narrativa educativa enfocada en política, reforma y oportunidades de educación superior para jóvenes profesionales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 06.1: EMISORAS PRINCIPALES ===== -->
+<section data-label="06.1 Educación en Radio FM — Emisoras">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">06 · Educación en Radio FM</div>
+      <div class="crumb">
+        <span>6.1</span><span class="dot">·</span><b>Top emisoras y programas (18-24 años)</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Análisis de 1,398 menciones en radio/TV</p>
+      <p class="t-h3" style="margin-bottom:48px;">Cinco emisoras concentran la conversación sobre educación en radio peruana.</p>
+
+      <!-- Barras -->
+      <div style="flex:1;">
+        <div class="bar-item">
+          <div class="bar-label">Radio Uno</div>
+          <div class="bar-bg" style="width:100%;">48 menciones</div>
+          <div class="bar-pct">3.4%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Radio América</div>
+          <div class="bar-bg" style="width:83%;">40 menciones</div>
+          <div class="bar-pct">2.9%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Radio Poder</div>
+          <div class="bar-bg" style="width:65%;">31 menciones</div>
+          <div class="bar-pct">2.2%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">El Montonero</div>
+          <div class="bar-bg" style="width:48%;">23 menciones</div>
+          <div class="bar-pct">1.6%</div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-label">Radio Exitosa</div>
+          <div class="bar-bg" style="width:33%;">16 menciones</div>
+          <div class="bar-pct">1.1%</div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;">
+        <p class="t-eyebrow" style="margin-bottom:16px;">Características de estas emisoras para educación:</p>
+        <p style="font-size:16px;line-height:1.6;color:var(--n-600);">
+          <strong>Radio Uno:</strong> Líder en cobertura de educación superior, becas y oportunidades laborales. Audiencia enfocada en jóvenes profesionales y estudiantes universitarios.<br><br>
+          <strong>Radio América:</strong> Fuerte presencia en política educativa y reforma. Entrevistas con funcionarios educativos y análisis de leyes educativas.<br><br>
+          <strong>Radio Poder:</strong> Enfoque en carrera profesional, empleabilidad y mercado laboral para graduados. Contenido práctico para transición universidad-trabajo.
+        </p>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span>06 · Educación en Radio FM</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 06.2: NARRATIVAS RADIO ===== -->
+<section data-label="06.2 Educación en Radio FM — Narrativas">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">06 · Educación en Radio FM</div>
+      <div class="crumb">
+        <span>6.2</span><span class="dot">·</span><b>Narrativas educativas dominantes en radio</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Distribución de narrativas educativas</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;">
+
+        <!-- Narrativa 1 -->
+        <div class="theme-card">
+          <div class="number" style="color:var(--accent);">1</div>
+          <h3>Política Educativa (43%)</h3>
+          <p>598 menciones. Reforma educativa, presupuesto, cambios normativos y decisiones ministeriales. Radio como canal de análisis y debate sobre dirección de educación.</p>
+        </div>
+
+        <!-- Narrativa 2 -->
+        <div class="theme-card">
+          <div class="number" style="color:var(--accent);">2</div>
+          <h3>Universidad (7%)</h3>
+          <p>100 menciones. Educación superior, carreras profesionales, universidades de calidad. Enfoque directo en oportunidades de formación profesional para 18-24.</p>
+        </div>
+
+        <!-- Narrativa 3 -->
+        <div class="theme-card">
+          <div class="number" style="color:var(--accent);">3</div>
+          <h3>Becas y Oportunidades (1%)</h3>
+          <p>12 menciones. Financiamiento, becas de gobierno y privadas. Baja cobertura en radio, pero alta relevancia para audiencia joven en situación económica vulnerable.</p>
+        </div>
+
+        <!-- Narrativa 4 -->
+        <div class="theme-card">
+          <div class="number" style="color:var(--accent);">4</div>
+          <h3>Empleabilidad (<1%)</h3>
+          <p>3 menciones. Salida laboral, habilidades para empleabilidad, transición universidad-trabajo. Subtema emergente con potencial de desarrollo en programas radiales.</p>
+        </div>
+
+      </div>
+
+      <hr class="hr">
+
+      <div style="margin-top:32px;">
+        <p class="t-eyebrow" style="margin-bottom:16px;">Oportunidades para contenido radial educativo:</p>
+        <ul style="font-size:16px;line-height:1.8;color:var(--n-600);margin-left:20px;">
+          <li><strong>Espacios especializados:</strong> Programas dedicados a carreras con demanda laboral actual</li>
+          <li><strong>Entrevistas con profesionales:</strong> Historias de éxito de jóvenes graduados 18-24</li>
+          <li><strong>Guías prácticas:</strong> Cómo acceder a becas, preparar prueba de acceso, elegir carrera</li>
+          <li><strong>Debate educativo:</strong> Análisis crítico de política educativa con participación de jóvenes</li>
+          <li><strong>Consejos de empleabilidad:</strong> Tips para transición a mercado laboral post-graduación</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span>06 · Educación en Radio FM</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 06.3: RELEVANCIA JÓVENES RADIO ===== -->
+<section data-label="06.3 Educación en Radio FM — Relevancia 18-24">
+  <div class="slide dark">
+    <header class="slide-header" style="border-bottom-color:rgba(255,255,255,.08);">
+      <div class="eyebrow" style="color:rgba(255,255,255,.55);">06 · Educación en Radio FM</div>
+      <div class="crumb" style="color:rgba(255,255,255,.55);">
+        <span>6.3</span><span class="dot" style="color:rgba(255,255,255,.3);">·</span><b style="color:var(--paper);">Contenido radio relevante para jóvenes profesionales</b>
+      </div>
+    </header>
+
+    <div class="frame" style="display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding-top:56px;padding-bottom:160px;">
+
+      <!-- Cifra principal -->
+      <div style="display:flex;flex-direction:column;gap:24px;max-width:820px;">
+        <p class="t-eyebrow" style="color:rgba(255,255,255,.55);">Radio FM · Menciones relevantes para 18-24</p>
+        <div style="display:flex;align-items:baseline;gap:16px;">
+          <span class="bignum" style="font-size:200px;color:var(--paper);">111</span>
+        </div>
+        <p style="font-family:var(--font-display);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-0.02em;color:var(--paper);max-width:780px;">de 1,398 menciones de radio mencionan<br>temas relevantes para jóvenes.</p>
+        <p class="t-body" style="color:rgba(255,255,255,.7);font-size:24px;max-width:700px;margin-top:8px;">51% de contenido relevante trata sobre universidad, 13% estudiantes, 12% escuela-colegio. Radio es canal especializado en educación superior y transición laboral para audiencia joven.</p>
+      </div>
+
+      <!-- Barras comparativas -->
+      <div style="display:flex;flex-direction:column;gap:20px;width:460px;">
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,.55);">Relevante 18–24</span>
+            <span style="font-family:var(--font-display);font-weight:900;font-size:32px;color:var(--paper);letter-spacing:-0.02em;">111</span>
+          </div>
+          <div style="height:28px;background:rgba(255,255,255,.12);position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;bottom:0;left:0;width:7.9%;background:var(--paper);"></div>
+          </div>
+          <span style="font-size:15px;color:rgba(255,255,255,.4);letter-spacing:0.06em;">7,9 % del contenido radio</span>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,.1);margin:8px 0;"></div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,.55);">Otros temas</span>
+            <span style="font-family:var(--font-display);font-weight:900;font-size:32px;color:rgba(255,255,255,.6);letter-spacing:-0.02em;">1,287</span>
+          </div>
+          <div style="height:28px;background:rgba(255,255,255,.12);position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;bottom:0;left:0;width:92.1%;background:rgba(255,255,255,.45);"></div>
+          </div>
+          <span style="font-size:15px;color:rgba(255,255,255,.4);letter-spacing:0.06em;">92,1 % política, economia, otros</span>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,.1);margin:12px 0;"></div>
+
+        <div style="padding:20px;background:rgba(255,90,31,0.15);border:1px solid rgba(255,90,31,0.35);border-radius:6px;">
+          <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;">
+            <strong>Radio vs otras plataformas:</strong> Radio tiene baja concentración de contenido educativo vs. social media, pero audiencia es adulta, enfocada y receptiva a temas de desarrollo profesional.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="slide-footer" style="border-top-color:rgba(255,255,255,.08);color:rgba(255,255,255,.45);">
+      <span>06 · Educación en Radio FM</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 06.4: HALLAZGOS RADIO ===== -->
+<section data-label="06.4 Educación en Radio FM — Hallazgos">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">06 · Educación en Radio FM</div>
+      <div class="crumb">
+        <span>6.4</span><span class="dot">·</span><b>Hallazgos y oportunidades en radio para 18-24</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Radio FM como canal educativo</p>
+
+      <div class="numlist" style="gap:36px;">
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">1</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Radio es especialista en política educativa, no educación de jóvenes</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">43% de narrativas educativas en radio tratan política educativa vs. 7% sobre universidad. Radio tiende a cobertura macro (reforma, presupuesto) no micro (opciones de carrera, becas). Oportunidad: programas especializados en trayectorias de jóvenes 18-24.</p>
+          </div>
+        </div>
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">2</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Emisoras como Uno y América son puertas de acceso para jóvenes</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">Radio Uno lidera con 48 menciones, América con 40. Estas emisoras tienen audiencia joven adulta, receptiva a contenido de desarrollo profesional. Son canales ideales para mensajes sobre educación superior, becas, transición laboral. Engagement bajo (0.41 prom.) indica falta de interactividad: oportunidad de programas participativos.</p>
+          </div>
+        </div>
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">3</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Narrativa de empleabilidad está ausente pero es demanda implícita</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">Solo 3 menciones sobre empleabilidad en radio. Pero cuando jóvenes hablan de universidad (100 menciones), evaluación subyacente es empleabilidad. Radio carece de contenido sobre transición universidad-trabajo, habilidades blandas, mercado laboral. Vacío estratégico para programa especializado en carrera profesional.</p>
+          </div>
+        </div>
+
+        <div class="item" style="grid-template-columns:72px 1fr;gap:24px;align-items:start;">
+          <div class="num num--accent" style="font-size:44px;padding-top:10px;border-top-width:3px;">4</div>
+          <div>
+            <h4 style="font-size:26px;margin-bottom:6px;">Becas y financiamiento sub-representadas en radio (1% vs 18% en social media)</h4>
+            <p style="font-size:20px;line-height:1.45;color:var(--n-600);">Solo 12 menciones sobre becas en radio vs. 28.7K en conversación general sobre educación. Jóvenes de sectores vulnerables ven becas como acceso crítico a educación superior. Radio tiene oportunidad de servir como intermediario confiable entre estudiantes, gobierno y universidades para información sobre financiamiento.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span>06 · Educación en Radio FM</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== SLIDE 06.5: RECOMENDACIONES RADIO ===== -->
+<section data-label="06.5 Educación en Radio FM — Recomendaciones">
+  <div class="slide">
+    <header class="slide-header">
+      <div class="eyebrow">06 · Educación en Radio FM</div>
+      <div class="crumb">
+        <span>6.5</span><span class="dot">·</span><b>Recomendaciones estratégicas para radio y jóvenes</b>
+      </div>
+    </header>
+
+    <div class="frame" style="padding-top:48px;">
+      <p class="t-eyebrow" style="margin-bottom:36px;">8 jun – 7 jul 2026 · Estrategia de educación en radio para 18-24 años</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+
+        <div style="border-left:4px solid var(--accent);padding-left:24px;">
+          <h4 style="font-size:22px;margin-bottom:12px;color:var(--accent);font-weight:700;">Para Emisoras</h4>
+          <ul style="font-size:16px;line-height:1.8;color:var(--n-600);list-style:none;">
+            <li style="margin-bottom:12px;">
+              <strong>1. Crear espacios dedicados</strong><br/>
+              Programas especializados en "Carrera & Futuro" dirigidos a 18-24. Cobertura de carreras con demanda, salidas laborales, tendencias de empleabilidad.
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>2. Entrevistas con graduados</strong><br/>
+              Historias de éxito de jóvenes 18-24 que encontraron oportunidades. Narrativas reales sobre educación → empleo.
+            </li>
+            <li>
+              <strong>3. Segmento de becas</strong><br/>
+              Informativo semanal sobre becas disponibles (gobierno, privadas, internacionales). Audiencia sub-informada sobre oportunidades.
+            </li>
+          </ul>
+        </div>
+
+        <div style="border-left:4px solid var(--accent-hover);padding-left:24px;">
+          <h4 style="font-size:22px;margin-bottom:12px;color:var(--accent-hover);font-weight:700;">Para Gobierno/Instituciones</h4>
+          <ul style="font-size:16px;line-height:1.8;color:var(--n-600);list-style:none;">
+            <li style="margin-bottom:12px;">
+              <strong>1. Campañas radiales dirigidas</strong><br/>
+              Usar Uno, América, Poder para comunicar políticas educativas y becas a audiencia joven adulta. Mayor impacto que social media para este segmento.
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>2. Call-in shows interactivos</strong><br/>
+              Programas en vivo donde jóvenes llamen con preguntas sobre opciones de carrera, acceso, financiamiento. Engagement bajo en radio sugiere falta de interactividad.
+            </li>
+            <li>
+              <strong>3. Alianzas con emisoras</strong><br/>
+              Patrocinio de espacios educativos en Uno/América. ROI alto: audiencia enfocada, confianza en medio, bajo ruido competitivo.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="margin-top:40px;padding:24px;background:var(--n-50);border-radius:8px;border-left:4px solid var(--accent);">
+        <p class="t-eyebrow" style="margin-bottom:12px;">Ventaja diferencial de radio para 18-24</p>
+        <p style="font-size:16px;line-height:1.6;color:var(--n-600);">
+          Radio alcanza jóvenes en momentos de viaje, descanso, transición (camino a universidad, trabajo). Formato audio permite consumo pasivo sin distracción. Narrativas radiales sobre educación construyen confianza más que tweets. Complementar estrategia digital con radio genera cobertura integral en jornada de jóvenes profesionales.
+        </p>
+      </div>
+
+    </div>
+
+    <footer class="slide-footer">
+      <span>06 · Educación en Radio FM</span>
+      <div class="right"><span>artool.</span></div>
+    </footer>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>
