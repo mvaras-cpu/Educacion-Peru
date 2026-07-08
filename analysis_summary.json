@@ -1,0 +1,19 @@
+{
+  "total_mentions": 220537,
+  "date_range": "2026-06-08 00:00:00 a 2026-07-07 23:59:48",
+  "hhi": 2134.0,
+  "top_topics": {
+    "otros": 114153,
+    "estudiantes": 43564,
+    "universidad": 37158,
+    "política educativa": 20837,
+    "becas/ayuda": 19921,
+    "escuela/colegio": 16048,
+    "financiamiento": 8786,
+    "tecnología educativa": 6763,
+    "calidad educativa": 6008,
+    "infraestructura": 4063
+  },
+  "total_engagement": 3300128,
+  "avg_engagement_per_mention": 14.964055918054568
+}
