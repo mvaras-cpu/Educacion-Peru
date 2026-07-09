@@ -23,11 +23,12 @@
 - **Instagram:** 1,413 menciones (1.0%)
 - **Radio:** 195 menciones (0.14%) ← **EXCLUIDO DEL REPORTE**
 
-#### 3. **Engagement Multipliers (vs Twitter)**
-- **Facebook:** 58.7x (antes: 270x)
-- **Instagram:** 62.7x (antes: 324x)
-- **YouTube:** 19.5x (antes: 119x)
-- *Ajustes por filtro educación* (Instagram/Facebook generan más engagement, pero en menor volumen)
+#### 3. **Engagement Multipliers (vs Twitter = 4.95 promedio)**
+- **TikTok:** 3,427x (46 menciones - volumen bajo, engagement máximo)
+- **Instagram:** 62.7x (1,413 menciones - balance óptimo)
+- **Facebook:** 58.7x (3,737 menciones - alto volumen + alto engagement)
+- **YouTube:** 19.5x (3,218 menciones - contenido largo, buen engagement)
+- *Nota: Ajustes por filtro educación. TikTok lidera en engagement pero con baja penetración en educación.*
 
 #### 4. **Distribución de Temas (ACTUALIZADO)**
 Rankings de importancia según menciones reales:
