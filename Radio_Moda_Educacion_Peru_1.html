@@ -642,6 +642,57 @@
             color: var(--n-600);
         }
 
+        /* ── Bar item vertical layout (for Slide 3.1) ─────────────────────────────────────────── */
+        .bar-item-vertical {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 28px;
+        }
+
+        .bar-item-vertical .bar-label {
+            width: 100%;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
+
+        .bar-item-vertical .bar-bg {
+            height: 28px;
+            width: 100%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .bar-footer {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 16px;
+            margin-top: 4px;
+        }
+
+        .bar-footer .bar-pct {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--accent);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .bar-description {
+            font-size: 13px;
+            color: var(--n-600);
+            line-height: 1.4;
+            flex: 1;
+        }
+
         @media print {
             .slide {
                 page-break-after: always;
@@ -858,48 +909,48 @@
       <p class="t-h3" style="margin-bottom:48px;">Cinco temas dominan la conversación sobre educación superior y oportunidades laborales.</p>
 
       <div style="flex:1;">
-        <div class="bar-item">
+        <div class="bar-item-vertical">
           <div class="bar-label">Estudiantes & Vida Universitaria</div>
           <div class="bar-bg" style="width:100%;">46.7K</div>
-          <div style="display:flex;gap:16px;margin-top:4px;">
+          <div class="bar-footer">
             <div class="bar-pct">32.7%</div>
-            <div style="font-size:13px;color:var(--n-600);line-height:1.4;flex:1;">Experiencia cotidiana en campus, historias personales y networking entre pares.</div>
+            <div class="bar-description">Experiencia cotidiana en campus, historias personales y networking entre pares.</div>
           </div>
         </div>
 
-        <div class="bar-item">
+        <div class="bar-item-vertical">
           <div class="bar-label">Universidad & Educación Superior</div>
           <div class="bar-bg" style="width:93%;">43.4K</div>
-          <div style="display:flex;gap:16px;margin-top:4px;">
+          <div class="bar-footer">
             <div class="bar-pct">30.4%</div>
-            <div style="font-size:13px;color:var(--n-600);line-height:1.4;flex:1;">Instituciones, programas académicos, rankings y acreditaciones.</div>
+            <div class="bar-description">Instituciones, programas académicos, rankings y acreditaciones.</div>
           </div>
         </div>
 
-        <div class="bar-item">
+        <div class="bar-item-vertical">
           <div class="bar-label">Salida Laboral & Empleabilidad</div>
           <div class="bar-bg" style="width:48%;">22.6K</div>
-          <div style="display:flex;gap:16px;margin-top:4px;">
+          <div class="bar-footer">
             <div class="bar-pct">15.8%</div>
-            <div style="font-size:13px;color:var(--n-600);line-height:1.4;flex:1;">Oportunidades de empleo post-egreso, carrera y habilidades laborales.</div>
+            <div class="bar-description">Oportunidades de empleo post-egreso, carrera y habilidades laborales.</div>
           </div>
         </div>
 
-        <div class="bar-item">
+        <div class="bar-item-vertical">
           <div class="bar-label">Becas, Financiamiento & Ayuda</div>
           <div class="bar-bg" style="width:31%;">14.4K</div>
-          <div style="display:flex;gap:16px;margin-top:4px;">
+          <div class="bar-footer">
             <div class="bar-pct">10.1%</div>
-            <div style="font-size:13px;color:var(--n-600);line-height:1.4;flex:1;">Acceso financiero, becas del gobierno y soluciones de financiamiento.</div>
+            <div class="bar-description">Acceso financiero, becas del gobierno y soluciones de financiamiento.</div>
           </div>
         </div>
 
-        <div class="bar-item">
+        <div class="bar-item-vertical">
           <div class="bar-label">Calidad & Acreditación</div>
           <div class="bar-bg" style="width:12%;">5.5K</div>
-          <div style="display:flex;gap:16px;margin-top:4px;">
+          <div class="bar-footer">
             <div class="bar-pct">3.9%</div>
-            <div style="font-size:13px;color:var(--n-600);line-height:1.4;flex:1;">Estándares de calidad, rankings e institucionales.</div>
+            <div class="bar-description">Estándares de calidad, rankings e institucionales.</div>
           </div>
         </div>
       </div>
