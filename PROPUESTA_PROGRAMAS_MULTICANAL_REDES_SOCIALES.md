@@ -265,54 +265,9 @@ SÁBADO 14:00      "RESUMEN EDUCATIVO" (25 min)
 
 ---
 
-## PROYECCIÓN DE IMPACTO
-
-### Alcance Estimado (Mes 1-3 de Launch)
-
-| Plataforma | Alcance Semanal | Meta 6 meses |
-|-----------|-----------------|--------------|
-| **Instagram Live** | 20K-40K viewers | 100K+ followers |
-| **TikTok Live** | 30K-60K viewers | 150K+ followers |
-| **YouTube** | 15K-30K views | 50K+ suscriptores |
-| **Facebook** | 10K-20K alcance | 30K+ followers |
-| **Twitter/X** | 50K-100K impressions | 40K+ followers |
-| **Newsletter** | 2K-5K abiertos | 10K+ suscriptores |
-| **TOTAL SEMANAL** | **150K-300K personas** alcanzadas |
-
-### Engagement Esperado
-- **Comentarios en vivo:** 5-10% de audiencia (comentarios, no llamadas)
-- **Interacción multicanal:** 8-12% (reacciones, shares, replies)
-- **Retorno a episodios en YouTube:** 40-60% ven contenido completo
-- **Crecimiento de comunidad:** 20-30% mes a mes (mes 1-3)
-
-### Retorno para Patrocinadores
-- **Visibilidad de marca:** 150K-300K impresiones/semana
-- **Engagement auténtico:** 8-12% (vs 1-2% en publicidad tradicional)
-- **Conversiones:** Becas solicitadas, inscripciones, aplicaciones laborales (trackeables)
-- **Alcance orgánico:** Sin costo de media, solo contenido
-
 ---
 
-## INVERSIÓN REQUERIDA
-
-| Concepto | Costo Mensual | Nota |
-|----------|--------------|------|
-| **Producción de Lives** | | |
-| Conductor/Anfitrión (1) | S/. 2,500 | O.K. con 2 conductores rotativos |
-| Técnico de transmisión (1) | S/. 1,500 | Maneja feeds simultáneos |
-| **Post-producción** | | |
-| Editor de video (Reels/Shorts/YouTube) | S/. 1,800 | Corta 15-20 videos/semana |
-| Diseño de graphics | S/. 800 | Thumbnails, intros, branding |
-| **Community & Growth** | | |
-| Community Manager (redes) | S/. 1,800 | Responde comentarios, gestiona engagement |
-| Social Media Manager | S/. 1,200 | Agenda, analytics, trending topics |
-| **Invitados & Contenido** | | |
-| Honorarios invitados especiales | S/. 1,000 | ~2 invitados/mes |
-| **TOTAL MENSUAL** | **S/. 10,600** | |
-| **Con patrocinios** | **Net S/. 4,600** | Después de 2-3 patrocinios (S/. 6K) |
-
-**Break-even:** 2-3 meses con 2-3 patrocinios activos  
-**ROI:** 200-300% anual (considerando publicidad orgánica vs paid media tradicional)
+**📊 Para análisis de inversión, impacto y ROI, ver documento separado: `MODELO_INVERSION_ROI_PROGRAMAS_MULTICANAL.md`**
 
 ---
 
